@@ -1,0 +1,24 @@
+def adding_report(report="T"):
+    total = 0
+    items = ""
+    while True:
+        user_input = input("Enter an integer or 'Q' to quit: ").strip()
+        if user_input.isdigit():
+            number = int(user_input)
+            total += number
+            if report == "A":
+                items += str(number) + "\n"
+        elif user_input.lower().startswith('q'):
+            if report == "A":
+                print("\nItems")
+                print(items)
+            print("\nTotal")
+            print(total)
+            print("\nCalculated by: [Aayush Patel]")
+            break
+        else:
+            print(user_input + " is invalid input")
+
+# Call the function with "A" and "T" to see both types of reports
+adding_report("A")
+adding_report("T")
